@@ -275,8 +275,9 @@ class GoogleNet:
                                  checkpoint_path='traffic-object-detection.tfl.ckpt')
 
     # Train
-    def train(self, train_data, train_label, a_mount_of_steps):
-        self.model.fit(train_data, train_label, snapshot_epoch=False, n_epoch=a_mount_of_steps)
+    def train(self, train_data, train_label, a_mount_of_steps, batch_size):
+        self.model.fit(train_data, train_label, n_epoch=a_mount_of_steps, batch_size=batch_size,
+                       snapshot_epoch=False, shuffle=True)
 
     # Save model
     def save(self, model_path_name):

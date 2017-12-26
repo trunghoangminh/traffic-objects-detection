@@ -9,9 +9,9 @@ class Training(BaseTraining):
         self.training_datas = training_datas
         self.training_labels = training_labels
 
-    def train(self, amount_of_steps):
+    def train(self, amount_of_steps, batch_size):
         print "Starting training ..."
-        self.googlenet.train(self.training_datas, self.training_labels, amount_of_steps)
+        self.googlenet.train(self.training_datas, self.training_labels, amount_of_steps, batch_size)
         print "Training done!"
 
     def save(self):
