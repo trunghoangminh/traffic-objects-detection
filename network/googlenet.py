@@ -271,8 +271,7 @@ class GoogleNet:
                                   loss='categorical_crossentropy',
                                   learning_rate=0.001)
 
-        self.model = tflearn.DNN(self.network, tensorboard_verbose=0,
-                                 checkpoint_path='traffic-object-detection.tfl.ckpt')
+        self.model = tflearn.DNN(self.network, tensorboard_verbose=0)
 
     # Train
     def train(self, train_data, train_label, a_mount_of_steps, batch_size):
